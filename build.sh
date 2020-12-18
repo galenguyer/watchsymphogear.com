@@ -15,7 +15,7 @@ core_count="$(grep -c ^processor /proc/cpuinfo)"
 docker build \
 	--build-arg NGINX_VER="$nginx_version" \
 	--build-arg CORE_COUNT="$core_count" \
-	-t docker.galenguyer.com/chef/universalanimalapi:latest \
+	-t docker.galenguyer.com/chef/watchsymphogear:latest \
 	-f Dockerfile .
 
-docker push docker.galenguyer.com/chef/universalanimalapi:latest
+docker push docker.galenguyer.com/chef/watchsymphogear:latest
