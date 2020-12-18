@@ -1,5 +1,5 @@
 <?php
-$files = glob("./animals/**/*");
+$files = glob("./frames/*");
 $file = substr($files[array_rand($files)], 2);
 
 if (getenv("PROTOCOL")) {
@@ -13,11 +13,11 @@ $host = $proto . "://$_SERVER[HTTP_HOST]/";
 echo <<<EOF
 <html lang='en'>
 	<head>
-		<title>Random Animals!</title>
+		<title>Watch Symphogear!</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Galen Guyer">
-		<meta name="description" content="Get a random animal picture!" />
+		<meta name="description" content="You really should watch Symphogear!" />
 		<style>
 			body {
 				font-family: Arial, Helvetica, sans-serif;
@@ -34,11 +34,9 @@ echo <<<EOF
 		<header>
 			<h1>Oops, it looks like that file doesn't exist!</h1>
         </header>
-        <h3>To make it up to you, here's a random animal</h3>
+        <h3>To make it up to you, here's a random frame</h3>
         <img src="$host$file"></img>
         <p>Permalink: <a href="$host$file">$host$file</a></p>
-        <script data-goatcounter="https://randomanimals.goatcounter.com/count"
-                async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 EOF;
