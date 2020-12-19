@@ -1,14 +1,11 @@
 version: "3.7"
-
 services:
-  randimals:
-    image: universalanimalapi:latest
-    container_name: randimals
+  gear:
+    image: local/nginx-php
+    container_name: gear
     restart: always
-    expose:
-      - "80"
     volumes:
-      - randimals:/var/www/html/animals
-
-volumes:
-  randimals:
+      - type: bind
+        source: /var/www/watchsymphogear.com
+        target: /var/www/html
+        read_only: true
